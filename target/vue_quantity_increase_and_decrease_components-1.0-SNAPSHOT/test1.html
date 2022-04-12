@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+<!--
+Project name(项目名称)：vue_quantity_increase_and_decrease_components
+  File name(文件名): test1
+  Authors(作者）: mao
+  Author QQ：1296193245
+  GitHub：https://github.com/maomao124/
+  Date(创建日期)： 2022/4/12
+  Time(创建时间)： 21:43
+  Description(描述)： 无
+-->
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="vue.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="hover.css">
+</head>
+<body>
+<div class="p">
+    <div class="buttons">
+        <button class="hvr-radial-out" @click="add">+</button>
+        <div class="number">{{number}}</div>
+        <button class="hvr-radial-out" @click="sub">-</button>
+    </div>
+</div>
+
+<script>
+    var app = new Vue({
+        el: ".buttons",
+        data: {
+            number: 1
+        },
+        methods: {
+            add: function ()
+            {
+                if (this.number >= 10)
+                {
+                    alert("数量不能超过10个")
+                }
+                else
+                {
+                    this.number++
+                }
+            },
+            sub: function ()
+            {
+                if (this.number <= 0)
+                {
+                    alert("不能为负数")
+                }
+                else
+                {
+                    this.number--
+                }
+            }
+        }
+    })
+</script>
+</body>
+</html>
